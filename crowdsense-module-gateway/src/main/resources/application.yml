@@ -1,0 +1,31 @@
+server:
+  port: 6702
+
+spring:
+  application:
+    name: crowdsense-module-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.34.16.47:7744
+        group: CROWD_SENSE_GROUP
+        namespace: crowdsense
+        username: crowdsense
+        password: XgdgU6YH3f
+    gateway:
+      routes:
+        - id: user_route
+          uri: lb://crowdsense-module-user
+          predicates:
+            - Path=/**
+
+
+
+management:
+  health:
+    redis:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'

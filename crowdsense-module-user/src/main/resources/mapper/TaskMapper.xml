@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fzu.crowdsense.mapper.TaskMapper">
+
+    <resultMap id="BaseResultMap" type="com.fzu.crowdsense.model.entity.Task">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="rootId" column="rootId" jdbcType="BIGINT"/>
+            <result property="publisherId" column="publisherId" jdbcType="BIGINT"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="details" column="details" jdbcType="VARCHAR"/>
+            <result property="imagesPath" column="imagesPath" jdbcType="VARCHAR"/>
+            <result property="submitLimit" column="submitLimit" jdbcType="BIGINT"/>
+            <result property="maxPassed" column="maxPassed" jdbcType="BIGINT"/>
+            <result property="currentPassed" column="currentPassed" jdbcType="BIGINT"/>
+            <result property="longitude" column="longitude" jdbcType="DOUBLE"/>
+            <result property="latitude" column="latitude" jdbcType="DOUBLE"/>
+            <result property="size" column="size" jdbcType="INTEGER"/>
+            <result property="integration" column="integration" jdbcType="DOUBLE"/>
+            <result property="onlineStatus" column="onlineStatus" jdbcType="INTEGER"/>
+            <result property="submitStatus" column="submitStatus" jdbcType="INTEGER"/>
+            <result property="checkStatus" column="checkStatus" jdbcType="INTEGER"/>
+            <result property="invalidationReason" column="invalidationReason" jdbcType="VARCHAR"/>
+            <result property="startTime" column="startTime" jdbcType="TIMESTAMP"/>
+            <result property="endTime" column="endTime" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,rootId,publisherId,
+        type,title,details,
+        imagesPath,submitLimit,maxPassed,
+        currentPassed,longitude,latitude,
+        size,integration,onlineStatus,
+        submitStatus,checkStatus,invalidationReason,
+        startTime,endTime,createTime,
+        updateTime
+    </sql>
+</mapper>

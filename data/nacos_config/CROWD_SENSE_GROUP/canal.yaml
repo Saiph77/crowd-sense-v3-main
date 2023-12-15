@@ -1,0 +1,7 @@
+canal:
+  destination: crowdsense # canal的集群名字，要与安装canal时设置的名称一致
+  server: 101.34.16.47:11111 # canal服务地址
+
+logging:
+  level:
+    top.javatool.canal.client.client: OFF

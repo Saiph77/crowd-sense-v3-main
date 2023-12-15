@@ -1,0 +1,49 @@
+server:
+  port: 3377
+
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: crowdsense-module-user
+  output:
+    ansi:
+      enabled: always
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.34.16.47:7744
+        group: CROWD_SENSE_GROUP
+        namespace: crowdsense
+        username: crowdsense
+        password: XgdgU6YH3f
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+      field-strategy: not_null
+      insert-update-strategy: not_null
+
+
+
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true

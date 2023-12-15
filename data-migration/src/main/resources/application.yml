@@ -1,0 +1,28 @@
+spring:
+  # 配置数据源信息
+  datasource:
+    dynamic:
+      primary: old
+      # 严格匹配数据源,默认false.true未匹配到指定数据源时抛异常,false使用默认数据源
+      strict: false
+      datasource:
+        # 需要迁移的旧数据库
+        old:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://101.34.16.47:8060/crowdsense_v2?useUnicode=true&characterEncoding=UTF-8&serverTimeZone=Asia/Shanghai
+          username: root
+          password: Fzu-Jsjydsjxy-2302_300!
+
+        # 新数据库
+        new:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://101.34.16.47:8060/crowdsense?useUnicode=true&characterEncoding=UTF-8&serverTimeZone=Asia/Shanghai
+          username: root
+          password: Fzu-Jsjydsjxy-2302_300!
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

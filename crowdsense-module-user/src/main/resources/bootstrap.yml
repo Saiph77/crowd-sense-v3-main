@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    nacos:
+      # 配置中心
+      config:
+        server-addr: 101.34.16.47:7744
+        enabled: true
+        file-extension: yaml
+        group: CROWD_SENSE_GROUP
+        namespace: crowdsense
+        username: crowdsense
+        password: XgdgU6YH3f
+        shared-configs[0]:
+          data-id: sa-token.yaml
+          group: CROWD_SENSE_GROUP
+          refresh: true
+        shared-configs[1]:
+          data-id: redis.yaml
+          group: CROWD_SENSE_GROUP
+          refresh: true
+        shared-configs[2]:
+          data-id: mysql-druid.yaml
+          group: CROWD_SENSE_GROUP
+          refresh: true
+        shared-configs[3]:
+          data-id: rabbitmq.yaml
+          group: CROWD_SENSE_GROUP
+          refresh: true
